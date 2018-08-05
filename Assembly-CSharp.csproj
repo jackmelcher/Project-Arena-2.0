@@ -56,6 +56,7 @@
      <Compile Include="Assets\Armor_Boots.cs" />
      <Compile Include="Assets\Armor_Helmet.cs" />
      <Compile Include="Assets\Bullet_Property.cs" />
+     <Compile Include="Assets\DropDoor.cs" />
      <Compile Include="Assets\Scripts\Camera\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\Camera\PixelPerfect.cs" />
      <Compile Include="Assets\Scripts\Camera\VariableResolutionPixel.cs" />
@@ -82,7 +83,6 @@
      <Compile Include="Assets\Scripts\Player\CharacterController2D.cs" />
      <Compile Include="Assets\Scripts\Player\ElementSystem.cs" />
      <Compile Include="Assets\Scripts\Player\FireBulletver2.cs" />
-     <Compile Include="Assets\Scripts\Player\NewBehaviourScript.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerControl2D.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerControl2DBroken.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerHealthManager.cs" />
@@ -112,11 +112,11 @@
      <Compile Include="Assets\Weapon_Bullet.cs" />
      <Compile Include="Assets\Weapon_Magazine.cs" />
      <Compile Include="Assets\WeaponBar.cs" />
- <Reference Include="Unity.PackageManagerUI.Editor">
- <HintPath>D:/Documents/Unity Projects/Project Arena 2.0/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
- </Reference>
  <Reference Include="UnityEditor.StandardEvents">
  <HintPath>D:/Documents/Unity Projects/Project Arena 2.0/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.PackageManagerUI.Editor">
+ <HintPath>D:/Documents/Unity Projects/Project Arena 2.0/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>D:/Program Files/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

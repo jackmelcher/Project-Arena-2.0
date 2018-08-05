@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class ReloadTheStage : MonoBehaviour {
 
@@ -11,7 +12,8 @@ public class ReloadTheStage : MonoBehaviour {
 
 	void Update(){
 		if(Input.GetKeyDown(KeyCode.Escape))
-			Application.LoadLevel("SelectionMenuTest");
+			SceneManager.LoadScene("SelectionMenuTest");
+			//Application.LoadLevel("SelectionMenuTest");
 
 		if(checkHeatlh.health <= 0)
 			Invoke("ReloadGame",2f);
@@ -24,6 +26,7 @@ public class ReloadTheStage : MonoBehaviour {
 
 
 	void ReloadGame(){			
-		Application.LoadLevel(Application.loadedLevel);
+		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+		//Application.LoadLevel(Application.loadedLevel);
 	}
 }

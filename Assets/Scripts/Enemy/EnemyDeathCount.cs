@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class EnemyDeathCount : MonoBehaviour {
 
@@ -8,7 +9,8 @@ public class EnemyDeathCount : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		GetComponent<GUIText>().text = "Score: " + counter;
+		// GuiText is obsolete
+		//GetComponent<GUIText>().text = "Score: " + counter;
 
 		if(counter >= 9000)
 			Invoke ("exit",3.0f);
@@ -17,6 +19,7 @@ public class EnemyDeathCount : MonoBehaviour {
 
 	void exit()
 	{
-		Application.LoadLevel("SelectionMenuTest");
+		SceneManager.LoadScene("SelectionMenuTest");
+		//Application.LoadLevel("SelectionMenuTest");
 	}
 }

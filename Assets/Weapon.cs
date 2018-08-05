@@ -28,6 +28,9 @@ public class Weapon : MonoBehaviour {
 
 	//Magazine Parameters
 	public float capacity;
+	public float capacityTotal;
+	public float reloadRate = 0f;
+	public float reloadRateTotal = 2.0f;
 
 	//Firing Parameters
 	public float rateOfFire = 0.2f;
@@ -57,6 +60,7 @@ public class Weapon : MonoBehaviour {
 		effect = bullet_s.effect;
 
 		capacity = magazine_s.capacity;
+		capacityTotal = magazine_s.capacity;
 
 		totalDamage = barrel_s.damage + body_s.damage +bullet_s.damage +magazine_s.damage;
 
@@ -88,10 +92,23 @@ public class Weapon : MonoBehaviour {
 		}
 		if(capacity <= 0){
 			reloading = true;
+			reloadRate = 0f;
+			//Invoke("Reload", reloadRate);
 		}
+		/*
 		if(reloading){
 			capacity += Time.deltaTime;
 			if(capacity >= magazine_s.capacity){
+				capacity = magazine_s.capacity;
+				reloading = false;
+			}
+		}
+		*/
+		if(reloading){
+			reloadRate += Time.deltaTime;
+			//Debug.Log("reloadRate = " + reloadRate);
+			capacity = capacityTotal*reloadRate/reloadRateTotal;
+			if(reloadRate >= reloadRateTotal){
 				capacity = magazine_s.capacity;
 				reloading = false;
 			}
@@ -141,4 +158,10 @@ public class Weapon : MonoBehaviour {
 		anim.SetBool("isAttacking", false);
 		player.attacking = false;
 	}
+	/*
+	void Reload(){
+		capacity = magazine_s.capacity;
+		reloading = false;
+	}
+	*/
 }
